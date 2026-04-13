@@ -1,0 +1,10 @@
+2026-04-13 13:39:13,428 - root - ERROR - Storage: Failed to load tasks from tasks.json: 'id'
+2026-04-13 13:39:42,701 - root - INFO - Storage: Successfully saved 1 tasks to tasks.json.
+2026-04-13 13:39:42,701 - task_manager - INFO - Task Added: ID 1, Title: 'Fix Bug'
+2026-04-13 13:39:42,702 - root - INFO - Storage: Successfully saved 2 tasks to tasks.json.
+2026-04-13 13:39:42,702 - task_manager - INFO - Task Added: ID 2, Title: 'Team Meeting'
+2026-04-13 13:39:42,705 - root - INFO - Storage: Successfully saved 2 tasks to tasks.json.
+2026-04-13 13:39:42,705 - task_manager - INFO - Task Status Toggled: ID 1, Completed: True
+2026-04-13 13:39:42,707 - root - INFO - Storage: Successfully saved 2 tasks to tasks.json.
+2026-04-13 13:39:42,707 - task_manager - INFO - Tasks Sorted by: priority
+2026-04-13 13:39:42,708 - task_manager - INFO - Exported tasks to tasks_export.csv
