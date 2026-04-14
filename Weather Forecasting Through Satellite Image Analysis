@@ -1,0 +1,43 @@
+# ------------------------------------------------------------
+# Weather Satellite Image Analysis using Python
+# ------------------------------------------------------------
+# This script demonstrates a simple approach to analyzing
+# satellite imagery by measuring brightness levels. Based on
+# the average brightness, we infer basic weather conditions
+# such as clear sky, cloudy weather, or high chance of rain.
+# ------------------------------------------------------------
+# Importing the required libraries
+import cv2          # OpenCV for image processing
+import numpy as np # NumPy for numerical computations
+
+# Step 1: Load the satellite image
+# Make sure the image file is in the same directory as this script
+image = cv2.imread("satellite.jpg")
+# Step 2: Validate that the image was loaded successfully
+if image is None:
+    print ("Error: The image file could not be found or opened.")
+    print ("Please check the file path and try again.")
+    exit ()
+# Step 3: Convert the image to grayscale
+# Grayscale simplifies the analysis by reducing the image to one channel
+gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# Step 4: Compute the average brightness of the grayscale image
+# Brightness is calculated as the mean of all pixel intensity values
+brightness = np.mean(gray)
+print (f"Average Brightness Value: {brightness:.2f}")
+
+# Step 5: Apply threshold logic to classify weather conditions
+# These thresholds are illustrative and can be tuned for accuracy
+if brightness < 100:
+    print ("Prediction: High chance of rain (dense cloud cover detected).")
+elif brightness < 150:
+    print ("Prediction: Cloudy weather (moderate cloud density).")
+else:
+    print ("Prediction: Clear sky (minimal cloud presence).")
+# Step 6: Display the original and processed images
+# This helps the user visually confirm the analysis
+cv2.imshow("Original Satellite Image", image)
+cv2.imshow("Grayscale Representation", gray)
+# Step 7: Wait for a key press before closing the image windows
+cv2.waitKey(0)
+cv2.destroyAllWindows()
